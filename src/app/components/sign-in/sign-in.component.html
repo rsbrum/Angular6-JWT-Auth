@@ -1,0 +1,9 @@
+<div class="form-group text-center animated fadeIn" [formGroup]="signinForm" (submit)="signIn()">
+    <h2>Sign in</h2>
+    <label for="" class="mt-5" [ngClass]="{'text-warning': checkField('email')}">Email</label>
+    <input type="text" formControlName="email" class="form-control border-dark border-0 rounded-0 w-50 mx-auto  p-2">
+    <label for="" class="mt-3" [ngClass]="{'text-warning': checkField('password')}">Password</label>
+    <input type="password" formControlName="password" class="form-control border-0 rounded-0 w-50 mx-auto p-2">
+    <button class="btn mx-auto  my-3 btn-dark rounded-0" (click)="signIn()">Sign in</button>  
+    <a class="form-text text-danger" [routerLink]="['/welcome',{ outlets: { auth: ['signup'] } }]">Sign up</a>
+</div>
