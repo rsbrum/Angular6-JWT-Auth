@@ -8,7 +8,7 @@ import { HomeComponent } from '../../components/home/home.component';
 import { AuthGuardService } from '../auth-guard/auth-guard.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/welcome/(auth:signin)', pathMatch: 'full'},
+  { path: '**', redirectTo: '/welcome/(auth:signin)', pathMatch: 'full'},
   { path: 'welcome', component: LandingPageComponent, children: [
     { path: 'signin', component: SignInComponent, outlet: 'auth'},
     { path: 'signup', component: SignUpComponent, outlet: 'auth'}
